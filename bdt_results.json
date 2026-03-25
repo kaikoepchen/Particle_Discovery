@@ -1,0 +1,9 @@
+{
+  "acc_rect": 0.75,
+  "acc_3feat": 0.864,
+  "acc_7feat": 0.9286666666666666,
+  "signal_efficiency": 0.9305,
+  "background_efficiency": 0.0726,
+  "n_sig_pass": 9305,
+  "n_bkg_pass": 726
+}
