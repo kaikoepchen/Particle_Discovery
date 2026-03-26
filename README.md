@@ -28,8 +28,7 @@ cut_params.json                 saved by selection.ipynb, loaded by bdt
 bdt_results.json                saved by bdt.ipynb, loaded by mass_fit + punzi_fom
 bdt_model.pkl                   saved by bdt.ipynb (sklearn model)
 fit_params.json                 saved by mass_fit.ipynb (background slope lambda)
-
-ProjectV_Discovery (3).pdf      
+  
 README.md                       
 ```
 
