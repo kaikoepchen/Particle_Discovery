@@ -14,29 +14,23 @@ es, then all 7), apply the selection
 
 ```
 data/
-    signal_Bs2MuMu.txt          raw signal sample (10k events, 8 features)
-    background_combinatorial.txt raw background sample (10k events, 8 features)
+    signal_Bs2MuMu.txt          
+    background_combinatorial.txt 
 
-plots/                          all plots saved here when you run the notebooks
+plots/                         
 
-features.ipynb                  part 3a + 3b
-selection.ipynb                 part 3c
-bdt.ipynb                       part 3d + 3e + 3f
-mass_fit.ipynb                  part 4 (all subparts)
-
-extensions/
-    punzi_fom.ipynb             Punzi figure of merit — better working point selection
-    wilks_validation.ipynb      Wilks' theorem validity check via background-only toys
-    extensions.tex              LaTeX report motivating and interpreting both extensions
-
+features.ipynb                  
+selection.ipynb                 
+bdt.ipynb                       
+mass_fit.ipynb                  
 fisher_scores.csv               saved by features.ipynb, loaded by selection + bdt
 cut_params.json                 saved by selection.ipynb, loaded by bdt
 bdt_results.json                saved by bdt.ipynb, loaded by mass_fit + punzi_fom
 bdt_model.pkl                   saved by bdt.ipynb (sklearn model)
 fit_params.json                 saved by mass_fit.ipynb (background slope lambda)
 
-ProjectV_Discovery (3).pdf      project sheet
-README.md                       this file
+ProjectV_Discovery (3).pdf      
+README.md                       
 ```
 
 ---
@@ -55,4 +49,4 @@ Trains a BDT using the same top 3 features and compares to the rectangular cut a
 **mass_fit.ipynb**
 Fits the background mass distribution to a normalised exponential on [4, 6] GeV to get the slope. Then generates 1000 toy MC datasets for one year of running (50 signal × efficiency + 2000 background × efficiency events, with Poisson fluctuations). Fits each toy with a composite signal+background PDF and recovers the signal fraction. Computes the significance per toy using Wilks' theorem (test statistic q = 2 × delta NLL, significance = sqrt(q)). Finally scans over experiment durations to find the minimum runtime needed for a 95% chance of a >5 sigma discovery.
 
----
+
