@@ -1,10 +1,3 @@
-# Project V – Particle Discovery
-
-The goal of this project is to design an experiment to discover a meson decaying into two muons.
-The full project sheet is in `ProjectV_Discovery (3).pdf`.
-
----
-
 ## how to run
 
 Run the notebooks in order — each one saves intermediate results that the next one loads.
@@ -76,3 +69,5 @@ Part 4 uses Wilks' theorem to convert the likelihood ratio test statistic into a
 
 **extensions/extensions.tex**
 LaTeX report that motivates both extensions, explains the relevant papers (Punzi 2003, Wilks 1938, Self & Liang 1987), and interprets the results in the context of the project.
+
+
