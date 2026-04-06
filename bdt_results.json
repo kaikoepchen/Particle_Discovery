@@ -5,5 +5,7 @@
   "signal_efficiency": 0.9305,
   "background_efficiency": 0.0726,
   "n_sig_pass": 9305,
-  "n_bkg_pass": 726
+  "n_bkg_pass": 726,
+  "signal_efficiency_punzi": 0.5903,
+  "background_efficiency_punzi": 0.0072
 }
