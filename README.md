@@ -4,7 +4,7 @@ search for the rare decay B_s → μμ in 10k signal + 10k background events. bu
 
 ## core
 
-rank features by Fisher score, tighten with rectangular cuts on the top three, then train an AdaBoost BDT on all seven raw inputs (MASS excluded to keep the fit unbiased). feed the resulting working point into a composite-PDF toy MC to quote the discovery time.
+rank features by Fisher score, tighten with rectangular cuts on the top three, then train an AdaBoost BDT on all seven raw inputs (MASS excluded to keep the fit unbiased). feed the resulting working point into a composite-PDF toy MC to quote the discovery time. validate the significance formula (Z = sqrt(q)) by checking Wilks' theorem on background-only toys.
 
 ### results
 
@@ -14,12 +14,17 @@ AdaBoost on 7 features reaches 92.87% accuracy, 93.05% signal efficiency, 7.26% 
 
 ![discovery duration](plots/discovery_duration.png)
 
+Wilks validity — the q distribution under H0 follows chi2(1), so interpreting sqrt(q) as a significance in σ is valid at our sample size:
+
+![Wilks validity](plots/wilks_validity.png)
+
 ### how to run
 
 1. `features.ipynb` — rank features by Fisher score
 2. `selection.ipynb` — rectangular cuts on top 3 features
 3. `bdt.ipynb` — train AdaBoost, apply selection → writes `bdt_results.json`
 4. `mass_fit.ipynb` — background fit, toy MC, discovery duration using the core BDT working point
+5. `wilks_validation.ipynb` — Wilks' theorem validity check with H0 toys
 
 ## extensions
 
@@ -37,19 +42,12 @@ swap AdaBoost for histogram-based gradient boosting. 10-fold cross-validated gri
 
 ![CV tuning](plots/cv_tuning.png)
 
-### Wilks validity
-
-check that q ~ chi2(1) holds at our sample size:
-
-![Wilks validity](plots/wilks_validity.png)
-
 ### how to run
 
 independent — each reads the core BDT model / data and quotes its own discovery time:
 
-5. `extensions/punzi_fom.ipynb` — Punzi threshold scan on the AdaBoost scores → writes `punzi_results.json`
-6. `extensions/classifier_improvements.ipynb` — gradient boosting with 10-fold CV grid-search hyperparameter tuning + Punzi scan → writes `improved_results.json`
-7. `extensions/wilks_validation.ipynb` — Wilks' theorem validity check with H0 toys
+6. `extensions/punzi_fom.ipynb` — Punzi threshold scan on the AdaBoost scores → writes `punzi_results.json`
+7. `extensions/classifier_improvements.ipynb` — gradient boosting with 10-fold CV grid-search hyperparameter tuning + Punzi scan → writes `improved_results.json`
 
 ## files
 
@@ -60,7 +58,8 @@ features.ipynb                  feature ranking
 selection.ipynb                 rectangular cut optimisation
 bdt.ipynb                       AdaBoost training + evaluation
 mass_fit.ipynb                  significance + discovery duration (core WP)
-extensions/                     punzi fom, classifier improvements, wilks validation
+wilks_validation.ipynb          Wilks' theorem validity check (validates Z = sqrt(q))
+extensions/                     punzi fom, classifier improvements
 fisher_scores.csv               feature ranking (from features.ipynb)
 cut_params.json                 optimal cuts (from selection.ipynb)
 bdt_results.json                core BDT efficiencies (from bdt.ipynb)
