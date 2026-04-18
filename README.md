@@ -16,10 +16,10 @@ Punzi FOM finds the threshold that actually minimises experiment runtime instead
 
 at the Punzi-optimal working point (BDT score ≥ 0.626): signal efficiency 59.0%, background efficiency 0.72%. The reduced signal yield is more than compensated for by ~10× stronger background rejection, giving a median 1-year significance of ~10.9σ and a minimum experiment duration of ~0.5 years for a 95% 5σ discovery probability (vs ~0.6 yr at the baseline hard-cut threshold).
 
-A gradient-boosted classifier with 10-fold stratified cross-validation reaches 97.1% CV accuracy (vs 92.9% for AdaBoost). At its Punzi-optimal threshold (BDT score ≥ 0.97) it gives signal efficiency 57.0%, background efficiency 0.06%, median 1-year significance ~12.2σ, and T95 ~0.34 yr:
+A gradient-boosted classifier with 10-fold stratified cross-validation reaches 97.1% CV accuracy (vs 92.9% for AdaBoost). At its Punzi-optimal threshold (BDT score ≥ 0.957) it gives signal efficiency 70.8%, background efficiency 0.12%, median 1-year significance ~13.5σ, and T95 ~0.3 yr:
 
 ![CV comparison](plots/cv_comparison.png)
-![ROC comparison](plots/roc_comparison.png)
+![Improved Punzi](plots/punzi_improved.png)
 
 Wilks' theorem validity — check that q ~ chi2(1) holds at our sample size:
 
@@ -54,6 +54,6 @@ cut_params.json                 optimal cuts (from selection.ipynb)
 bdt_results.json                efficiencies — baseline + Punzi + improved Punzi
 bdt_model.pkl                   trained AdaBoost model
 improved_model.pkl              trained gradient-boosted model
-improved_results.json           CV + test metrics for the improved classifier
+improved_results.json           CV + Punzi working point for the improved classifier
 fit_params.json                 background slope (from mass_fit.ipynb)
 ```
