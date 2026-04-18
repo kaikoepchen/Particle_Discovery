@@ -16,7 +16,7 @@ Punzi FOM finds the threshold that actually minimises experiment runtime instead
 
 at the Punzi-optimal working point (BDT score ≥ 0.626): signal efficiency 59.0%, background efficiency 0.72%. The reduced signal yield is more than compensated for by ~10× stronger background rejection, giving a median 1-year significance of ~10.9σ and a minimum experiment duration of ~0.5 years for a 95% 5σ discovery probability (vs ~0.6 yr at the baseline hard-cut threshold).
 
-A gradient-boosted classifier with 10-fold stratified cross-validation reaches 97.1% CV accuracy (vs 92.9% for AdaBoost). At its Punzi-optimal threshold (BDT score ≥ 0.957) it gives signal efficiency 70.8%, background efficiency 0.12%, median 1-year significance ~13.5σ, and T95 ~0.3 yr:
+A gradient-boosted classifier with 10-fold cross-validation reaches 97.1% CV accuracy (vs 92.9% for AdaBoost). At its Punzi-optimal threshold (BDT score ≥ 0.957) it gives signal efficiency 70.8%, background efficiency 0.12%, median 1-year significance ~13.5σ, and T95 ~0.3 yr:
 
 ![CV comparison](plots/cv_comparison.png)
 ![Improved Punzi](plots/punzi_improved.png)
@@ -33,7 +33,7 @@ run the notebooks in order:
 2. `selection.ipynb` — rectangular cuts on top 3 features
 3. `bdt.ipynb` — train AdaBoost, apply selection
 4. `extensions/punzi_fom.ipynb` — Punzi FOM threshold scan on the AdaBoost scores (writes Punzi efficiencies back into `bdt_results.json`)
-5. `extensions/classifier_improvements.ipynb` — gradient boosting with 10-fold stratified CV, Punzi scan on the improved scores (writes improved-Punzi efficiencies into `bdt_results.json`)
+5. `extensions/classifier_improvements.ipynb` — gradient boosting with 10-fold CV, Punzi scan on the improved scores (writes improved-Punzi efficiencies into `bdt_results.json`)
 6. `mass_fit.ipynb` — background fit, toy MC, discovery duration (prefers improved-Punzi, then baseline-Punzi, then baseline hard cut)
 7. `extensions/wilks_validation.ipynb` — Wilks' theorem validity check with H0 toys
 
