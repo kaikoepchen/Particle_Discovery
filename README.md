@@ -27,21 +27,15 @@ Each extension is self-contained — it re-runs the same background fit + toy MC
 
 ### Punzi FOM
 
-pick the threshold that actually minimises experiment runtime instead of just maximising accuracy:
+pick the threshold that actually minimises experiment runtime instead of just maximising accuracy. at the Punzi-optimal working point (BDT score ≥ 0.626): signal efficiency 59.0%, background efficiency 0.72%, 1-year significance ~10.8σ, T95 ≈ 0.5 yr.
 
 ![Punzi FOM](plots/punzi_fom.png)
-
-At the Punzi-optimal working point (BDT score ≥ 0.626): signal efficiency 59.0%, background efficiency 0.72%. ~10× stronger background rejection buys a sharper 1-year significance (~10.8σ) and the same T95 ≈ 0.5 yr with more headroom.
-
-![discovery vs duration — Punzi](plots/discovery_duration_punzi.png)
 
 ### Classifier improvements
 
 swap AdaBoost for histogram-based gradient boosting. 10-fold cross-validated grid search over `max_depth` and `learning_rate` picks `{max_depth: 5, learning_rate: 0.2}` with 98.2% CV accuracy. at its Punzi-optimal threshold (BDT score ≥ 0.970) it gives signal efficiency 87.4%, background efficiency 0.02%, median 1-year significance ~15.5σ, and T95 ~0.3 yr.
 
 ![CV tuning](plots/cv_tuning.png)
-![Improved Punzi](plots/punzi_improved.png)
-![discovery vs duration — improved](plots/discovery_duration_improved.png)
 
 ### Wilks validity
 
