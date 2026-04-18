@@ -9,43 +9,58 @@
     "VertexChisq",
     "Isolation"
   ],
-  "cv_results": {
-    "AdaBoost": {
-      "folds": [
-        0.925,
-        0.923,
-        0.92,
-        0.932,
-        0.9255,
-        0.935,
-        0.9215,
-        0.9295,
-        0.94,
-        0.936
-      ],
-      "mean": 0.92875,
-      "std": 0.006450775147220676
-    },
-    "GradBoost": {
-      "folds": [
-        0.9695,
-        0.9705,
-        0.977,
-        0.977,
-        0.9665,
-        0.9685,
-        0.964,
-        0.9685,
-        0.9745,
-        0.972
-      ],
-      "mean": 0.9708,
-      "std": 0.004112177038990412
-    }
+  "best_params": {
+    "learning_rate": 0.2,
+    "max_depth": 5
   },
-  "improved_punzi_threshold": 0.9572240802675585,
-  "signal_efficiency_improved_punzi": 0.7082,
-  "background_efficiency_improved_punzi": 0.0012,
-  "median_significance_1yr_improved_punzi": 13.476354644280125,
+  "best_cv_accuracy": 0.982,
+  "cv_grid_mean_scores": [
+    [
+      0.9522,
+      0.9609,
+      0.9675
+    ],
+    [
+      0.9633499999999999,
+      0.9708,
+      0.9762000000000001
+    ],
+    [
+      0.9740499999999999,
+      0.9798499999999999,
+      0.982
+    ]
+  ],
+  "cv_grid_std_scores": [
+    [
+      0.0053953683840865,
+      0.004029888335921982,
+      0.0035284557528754653
+    ],
+    [
+      0.004364916952245494,
+      0.004112177038990412,
+      0.0030919249667480573
+    ],
+    [
+      0.0038499999999999997,
+      0.003008737276666084,
+      0.003000000000000023
+    ]
+  ],
+  "cv_grid_depths": [
+    3,
+    4,
+    5
+  ],
+  "cv_grid_learning_rates": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "improved_punzi_threshold": 0.970334448160535,
+  "signal_efficiency_improved_punzi": 0.8738,
+  "background_efficiency_improved_punzi": 0.0002,
+  "median_significance_1yr_improved_punzi": 15.512446682337607,
   "T95_improved_punzi_years": 0.3
 }

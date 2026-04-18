@@ -26,9 +26,9 @@ At the Punzi-optimal working point (BDT score ≥ 0.626): signal efficiency 59.0
 
 ![discovery vs duration — Punzi](plots/discovery_duration_punzi.png)
 
-A gradient-boosted classifier with 10-fold cross-validation reaches 97.1% CV accuracy (vs 92.9% for AdaBoost). At its Punzi-optimal threshold (BDT score ≥ 0.957) it gives signal efficiency 70.8%, background efficiency 0.12%, median 1-year significance ~13.5σ, and T95 ~0.3 yr:
+A gradient-boosted classifier with 10-fold cross-validated grid search over `max_depth` and `learning_rate` picks `{max_depth: 5, learning_rate: 0.2}` with 98.2% CV accuracy. At its Punzi-optimal threshold (BDT score ≥ 0.970) it gives signal efficiency 87.4%, background efficiency 0.02%, median 1-year significance ~15.5σ, and T95 ~0.3 yr:
 
-![CV comparison](plots/cv_comparison.png)
+![CV tuning](plots/cv_tuning.png)
 ![Improved Punzi](plots/punzi_improved.png)
 ![discovery vs duration — improved](plots/discovery_duration_improved.png)
 
@@ -48,7 +48,7 @@ run the notebooks in order:
 extensions (independent — each reads the core BDT model / data and quotes its own discovery time):
 
 5. `extensions/punzi_fom.ipynb` — Punzi threshold scan on the AdaBoost scores → writes `punzi_results.json`
-6. `extensions/classifier_improvements.ipynb` — gradient boosting with 10-fold CV + Punzi scan → writes `improved_results.json`
+6. `extensions/classifier_improvements.ipynb` — gradient boosting with 10-fold CV grid-search hyperparameter tuning + Punzi scan → writes `improved_results.json`
 7. `extensions/wilks_validation.ipynb` — Wilks' theorem validity check with H0 toys
 
 ## files
