@@ -45,5 +45,7 @@
   },
   "improved_punzi_threshold": 0.9572240802675585,
   "signal_efficiency_improved_punzi": 0.7082,
-  "background_efficiency_improved_punzi": 0.0012
+  "background_efficiency_improved_punzi": 0.0012,
+  "median_significance_1yr_improved_punzi": 13.476354644280125,
+  "T95_improved_punzi_years": 0.3
 }
