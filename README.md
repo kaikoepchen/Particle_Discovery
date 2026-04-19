@@ -28,8 +28,6 @@ Wilks validity — the q distribution under H0 follows chi2(1), so interpreting 
 
 ## extensions
 
-Each extension is self-contained — it re-runs the same background fit + toy MC as `mass_fit.ipynb` at its own working point, so the core notebook never depends on extension state.
-
 ### Punzi FOM
 
 pick the threshold that actually minimises experiment runtime instead of just maximising accuracy. at the Punzi-optimal working point (BDT score ≥ 0.626): signal efficiency 59.0%, background efficiency 0.72%, 1-year significance ~10.8σ, T95 ≈ 0.5 yr.
